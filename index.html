@@ -3,74 +3,83 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>¿Qué pasó?</title>
+<title>¿?</title>
 
 <style>
 body {
     margin: 0;
     height: 100vh;
-    background: linear-gradient(to bottom, #1632cf, #34495e);
-    overflow: hidden;
-    font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgba(148, 22, 22, 0.623);
-    font-size: 50px;
-    text-align: center;
-    font-family: 'Times New Roman', Times, serif ;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #ad1a1a, #b62a77);
+    overflow: hidden;
 }
 
-.mensaje {
+/* Flores decorativas */
+.flower {
     position: absolute;
-    z-index: 1;
+    font-size: 40px;
+    animation: float 6s infinite ease-in-out;
 }
 
-.emoji {
-    position: absolute;
-    top: -50px;
-    font-size: 30px;
-    animation: caer linear infinite;
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
 }
 
-@keyframes caer {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(110vh); }
+button {
+    padding: 15px 30px;
+    font-size: 20px;
+    background-color: #ffd84d;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #ffcc00;
+    transform: scale(1.1);
 }
 </style>
 </head>
 
 <body>
 
-<div class="mensaje">
-    ¿se murió o me abandonó?
-</div>
+<!-- Flores azules y amarillas -->
+<div class="flower" style="top:10%; left:20%;">🌹</div>
+<div class="flower" style="top:80%; left:81%;">💙</div>
+<div class="flower" style="top:25%; left:15%;">🌹</div>
+<div class="flower" style="top:70%; left:73%;">💙</div>
+<div class="flower" style="top:20%; left:20%;">🌹</div>
+<div class="flower" style="top:15%; left:15%;">🌹</div>
+<div class="flower" style="top:15%; left:5%;">🌹</div>
+<div class="flower" style="top:25%; left:10%;">🌹</div>
+<div class="flower" style="top:60%; left:89%;">💙</div>
+<div class="flower" style="top:85%; left:85%;">💙</div>
+<div class="flower" style="top:70%; left:79%;">💙</div>
+<div class="flower" style="top:70%; left:90%;">💙</div>
 
-<script>
-function crearEmoji() {
-    const emoji = document.createElement("div");
-    emoji.classList.add("emoji");
-    emoji.innerText = "🥀";
-    emoji.style.left = Math.random() * 100 + "vw";
-    emoji.style.animationDuration = (Math.random() * 3 + 2) + "s";
-    document.body.appendChild(emoji);
-
-    setTimeout(() => {
-        emoji.remove();
-    }, 5000);
-}
-
-setInterval(crearEmoji, 300);
-</script>
+<button onclick="irPagina()">¿Qué pasó?</button>
 
 <audio id="musica" loop>
-  <source src="gigi.mp4" type="audio/mpeg">
+  <source src="gaga.mp4" type="audio/mpeg">
 </audio>
 
 <script>
 document.addEventListener("click", function() {
   document.getElementById("musica").play();
 }, { once: true });
+</script>
+
+
+<script>
+function irPagina() {
+    window.location.href = "parece que no.html";
+}
 </script>
 
 </body>
